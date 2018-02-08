@@ -17,8 +17,10 @@ public class Movement {
 		timer = new Timer();
 	}
 
-	private void updatePlayerDirection() {
-	
+	private void updatePlayerDirection(MovementDirection direction) {
+		player.stopMoving();
+		playerDirection = direction;
+		player.moveTo(direction);
 	}
 
 	private void launchMovementEngine() {
@@ -26,14 +28,15 @@ public class Movement {
 
 			@Override
 			public void run() {
-				updatePlayerDirection();
+				//updatePlayerDirection();
 
 			}
 		}, 0, 500);
 	}
 	
 	public void setPlayerDirection(MovementDirection direction) {
-		this.playerDirection = direction;
+		//this.playerDirection = direction;
+		updatePlayerDirection(direction);
 	}
 
 }

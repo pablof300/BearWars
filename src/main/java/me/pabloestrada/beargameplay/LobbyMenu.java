@@ -17,14 +17,13 @@ public class LobbyMenu {
 	@FXML
 	private ImageView playerNode;
 
-	private KeyListener keyListener;
 	private Player player;
 	private Movement movementEngine;
 
 	@FXML
 	private void initialize() {
-		movementEngine = new Movement(player);
 		player = new Player(playerNode);
+		movementEngine = new Movement(player);
 		launchKeyListener();
 	}
 

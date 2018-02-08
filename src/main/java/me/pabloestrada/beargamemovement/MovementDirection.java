@@ -5,7 +5,7 @@ import java.util.Set;
 
 public enum MovementDirection {
 
-	UP("UP", "W", 0, 1), RIGHT("RIGHT", "D", 1, 0), DOWN("DOWN", "S", 0, -1), LEFT("LEFT", "A", -1, 0), NONE("", "", 0,
+	UP("UP", "W", 0, -1), RIGHT("RIGHT", "D", 1, 0), DOWN("DOWN", "S", 0, 1), LEFT("LEFT", "A", -1, 0), NONE("", "", 0,
 			0);
 
 	private String mainKey;

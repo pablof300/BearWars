@@ -1,6 +1,5 @@
 package me.pabloestrada.bearwarplayer;
 
-import javafx.animation.Timeline;
 import javafx.animation.TranslateTransition;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
@@ -11,20 +10,22 @@ public class Player {
 	private ImageView playerNode;
 	private TranslateTransition movementTransition;
 
-	private final double DIRECTION_MAGNITUDE = 2;
+	private final double DIRECTION_MAGNITUDE = 5;
 
 	public Player(ImageView playerNode) {
 		movementTransition = null;
 		this.playerNode = playerNode;
 	}
 
-	public void moveTo(MovementDirection direction) {
+	@SuppressWarnings("unchecked")
+	public void moveTo(final MovementDirection direction) {
 		movementTransition = new TranslateTransition(Duration.millis(0.5), playerNode);
 		movementTransition.setByX(DIRECTION_MAGNITUDE * direction.getX());
 		movementTransition.setByY(DIRECTION_MAGNITUDE * direction.getY());
-		movementTransition.setCycleCount(Timeline.INDEFINITE);
+		movementTransition.setCycleCount(1);
 		movementTransition.setAutoReverse(false);
 		movementTransition.play();
+		
 	}
 
 	public void stopMoving() {

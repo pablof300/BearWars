@@ -12,9 +12,10 @@ public class KeyListener implements EventHandler<KeyEvent> {
 	}
 
 	public void handle(KeyEvent event) {
-		if (!isValidKey(event.getCharacter()))
+		String key = event.getCode().toString();
+		if (!isValidKey(key))
 			return;
-		movementEngine.setPlayerDirection(MovementDirection.getPlayerDirection(event.getCharacter()));
+		movementEngine.setPlayerDirection(MovementDirection.getPlayerDirection(key));
 	}
 
 	public boolean isValidKey(String key) {
