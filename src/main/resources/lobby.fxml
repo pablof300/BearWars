@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="460.0" style="-fx-background-color: #484050;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.pabloestrada.beargameplay.LobbyMenu">
+   <children>
+      <ImageView fitHeight="650.0" fitWidth="460.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@lobby.png" />
+         </image>
+         <StackPane.margin>
+            <Insets bottom="20.0" />
+         </StackPane.margin>
+      </ImageView>
+      <ImageView fitHeight="216.0" fitWidth="224.0">
+         <image>
+            <Image url="@farm_0.png" />
+         </image>
+         <StackPane.margin>
+            <Insets left="241.0" top="113.0" />
+         </StackPane.margin>
+      </ImageView>
+      <ImageView>
+         <image>
+            <Image url="@farm_1.png" />
+         </image>
+         <StackPane.margin>
+            <Insets right="267.0" top="-18.0" />
+         </StackPane.margin>
+      </ImageView>
+      <ImageView>
+         <image>
+            <Image url="@farm_1.png" />
+         </image>
+         <StackPane.margin>
+            <Insets right="85.0" top="181.0" />
+         </StackPane.margin>
+      </ImageView>
+      <ImageView>
+         <image>
+            <Image url="@farm_1.png" />
+         </image>
+         <StackPane.margin>
+            <Insets right="267.0" top="181.0" />
+         </StackPane.margin>
+      </ImageView>
+      <ImageView>
+         <image>
+            <Image url="@farm_1.png" />
+         </image>
+         <StackPane.margin>
+            <Insets right="85.0" top="-18.0" />
+         </StackPane.margin>
+      </ImageView>
+      <ImageView>
+         <image>
+            <Image url="@hp_bar.png" />
+         </image>
+         <StackPane.margin>
+            <Insets right="302.0" top="400.0" />
+         </StackPane.margin>
+      </ImageView>
+      <ImageView>
+         <image>
+            <Image url="@hp_bar.png" />
+         </image>
+         <StackPane.margin>
+            <Insets right="246.0" top="400.0" />
+         </StackPane.margin>
+      </ImageView>
+      <ImageView>
+         <image>
+            <Image url="@hp_bar.png" />
+         </image>
+         <StackPane.margin>
+            <Insets right="190.0" top="400.0" />
+         </StackPane.margin>
+      </ImageView>
+      <ImageView>
+         <image>
+            <Image url="@hp_bar.png" />
+         </image>
+         <StackPane.margin>
+            <Insets right="134.0" top="400.0" />
+         </StackPane.margin>
+      </ImageView>
+      <ImageView>
+         <image>
+            <Image url="@hp_bar.png" />
+         </image>
+         <StackPane.margin>
+            <Insets right="78.0" top="400.0" />
+         </StackPane.margin>
+      </ImageView>
+      <ImageView>
+         <image>
+            <Image url="@hp_bar.png" />
+         </image>
+         <StackPane.margin>
+            <Insets right="22.0" top="400.0" />
+         </StackPane.margin>
+      </ImageView>
+      <ImageView>
+         <image>
+            <Image url="@hp_bar.png" />
+         </image>
+         <StackPane.margin>
+            <Insets right="-34.0" top="400.0" />
+         </StackPane.margin>
+      </ImageView>
+      <ImageView>
+         <image>
+            <Image url="@hp_bar.png" />
+         </image>
+         <StackPane.margin>
+            <Insets right="-90.0" top="400.0" />
+         </StackPane.margin>
+      </ImageView>
+      <ImageView>
+         <image>
+            <Image url="@hp_bar.png" />
+         </image>
+         <StackPane.margin>
+            <Insets right="-146.0" top="400.0" />
+         </StackPane.margin>
+      </ImageView>
+      <ImageView>
+         <image>
+            <Image url="@hp_bar.png" />
+         </image>
+         <StackPane.margin>
+            <Insets right="-202.0" top="400.0" />
+         </StackPane.margin>
+      </ImageView>
+      <ImageView fitHeight="48.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@bear_0_2_static.png" />
+         </image>
+         <StackPane.margin>
+            <Insets right="180.0" top="-230.0" />
+         </StackPane.margin>
+      </ImageView>
+      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="Lvl 10" textAlignment="CENTER" wrappingWidth="75.21928405761719">
+         <StackPane.margin>
+            <Insets left="380.0" top="645.0" />
+         </StackPane.margin>
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="You don't have enough money to purchase this farm!" textAlignment="CENTER" wrappingWidth="423.2192840576172">
+         <font>
+            <Font size="10.0" />
+         </font>
+         <StackPane.margin>
+            <Insets top="345.0" />
+         </StackPane.margin>
+      </Text>
+      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="Parzival" wrappingWidth="289.2192840576172">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <StackPane.margin>
+            <Insets left="-150.0" top="645.0" />
+         </StackPane.margin>
+      </Text>
+   </children>
+</StackPane>
