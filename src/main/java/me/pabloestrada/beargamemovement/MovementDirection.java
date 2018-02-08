@@ -5,15 +5,16 @@ import java.util.Set;
 
 public enum MovementDirection {
 
-	UP("UP", "W", 0, -1), RIGHT("RIGHT", "D", 1, 0), DOWN("DOWN", "S", 0, 1), LEFT("LEFT", "A", -1, 0), NONE("", "", 0,
-			0);
+	UP("UP", "W", 0, -1,0), RIGHT("RIGHT", "D", 1, 0,1), DOWN("DOWN", "S", 0, 1,2), LEFT("LEFT", "A", -1, 0,3), NONE("", "", 0,
+			0,0);
 
 	private String mainKey;
 	private String alternativeKey;
 
 	private int x;
 	private int y;
-
+	private int texturePosition;
+	
 	private static HashMap<String, MovementDirection> nameMap;
 
 	static {
@@ -24,8 +25,9 @@ public enum MovementDirection {
 		}
 	}
 
-	private MovementDirection(String mainKey, String alternativeKey, int x, int y) {
+	private MovementDirection(String mainKey, String alternativeKey, int x, int y, int texturePosition) {
 		this.mainKey = mainKey;
+		this.texturePosition = texturePosition;
 		this.x = x;
 		this.y = y;
 		this.alternativeKey = alternativeKey;
@@ -53,6 +55,10 @@ public enum MovementDirection {
 
 	public int getY() {
 		return y;
+	}
+	
+	public int getTexturePosition() {
+		return texturePosition;
 	}
 
 }
