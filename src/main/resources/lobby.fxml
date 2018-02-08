@@ -136,7 +136,7 @@
             <Insets right="-202.0" top="400.0" />
          </StackPane.margin>
       </ImageView>
-      <ImageView fitHeight="48.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="playerNode" fitHeight="48.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@bear_0_2_static.png" />
          </image>
