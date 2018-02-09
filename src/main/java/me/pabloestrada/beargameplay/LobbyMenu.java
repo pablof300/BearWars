@@ -9,12 +9,14 @@ import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import me.pabloestrada.beargamefarms.Farm;
 import me.pabloestrada.beargamemovement.KeyListener;
 import me.pabloestrada.beargamemovement.Movement;
 import me.pabloestrada.beargamemovement.Position;
 import me.pabloestrada.beargamemovement.Region;
+import me.pabloestrada.beargamemovement.RoomType;
 import me.pabloestrada.bearwar.BearWarMain;
 import me.pabloestrada.bearwarplayer.Player;
 
@@ -47,7 +49,7 @@ public class LobbyMenu {
 	private Text defenseNode;
 	@FXML
 	private Text fishAmountNode;
-	
+
 	@FXML
 	private Text status;
 
@@ -59,9 +61,12 @@ public class LobbyMenu {
 
 	@FXML
 	private void initialize() {
+
+		Font.loadFont(getClass().getResourceAsStream("/LCD_Solid.ttf"), 44);
+
 		player = new Player(playerNode,
 				new Text[] { strengthNode, stealthNode, gathererNode, defenseNode, fishAmountNode });
-		movementEngine = new Movement(player, getRegions());
+		movementEngine = new Movement(player, getRegions(), getRegionsOfInterest());
 		launchKeyListener();
 		loadFarms();
 	}
@@ -88,11 +93,23 @@ public class LobbyMenu {
 		long[] rates = { 0, 750, 500, 250, 250 };
 		for (int i = 0; i < farmNodes.length; i++) {
 			if (i == 0)
-				farms[i] = new Farm(i, pane,player,status);
+				farms[i] = new Farm(i, pane, player, status);
 			else
-				farms[i] = new Farm(rates[i], i, pane,player,status);
+				farms[i] = new Farm(rates[i], i, pane, player, status);
 			nodeToFarm.put(farmNodes[i], farms[i]);
 		}
+	}
+
+	private List<Region> getRegionsOfInterest() {
+		ArrayList<Region> regions = new ArrayList<Region>();
+		double[][] topPosition = { { 100, 0 }, { 220, 0 }, { 325, 0 } };
+		double[][] bottomPosition = { { 145, 51 }, { 270, 51 }, { 375, 51 } };
+		RoomType[] regionTypes = {RoomType.MULTIPLAYER_ROOM, RoomType.TRAINING_ROOM, RoomType.SHOP_ROOM};
+		for (int r = 0; r < topPosition.length; r++) {
+			regions.add(new Region(new Position(topPosition[r][0], topPosition[r][1]),
+					new Position(bottomPosition[r][0], bottomPosition[r][1]), regionTypes[r]));
+		}
+		return regions;
 	}
 
 	private List<Region> getRegions() {

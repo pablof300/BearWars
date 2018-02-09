@@ -64,8 +64,8 @@ public class Player {
 
 		Bounds boundsInScene = playerNode.localToScene(playerNode.getBoundsInLocal());
 
-		System.out.println(boundsInScene.getMaxX() + " and " + boundsInScene.getMinX());
-		System.out.println(boundsInScene.getMaxY() + " and " + boundsInScene.getMinY());
+		System.out.println("x: " + boundsInScene.getMaxX() + " and y: " + boundsInScene.getMaxY());
+		System.out.println("x: " + boundsInScene.getMinX() + " and y:" + boundsInScene.getMinY());
 	}
 
 	public Position getPlayerMaxPosition() {

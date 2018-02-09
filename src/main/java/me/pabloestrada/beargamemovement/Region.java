@@ -1,16 +1,23 @@
 package me.pabloestrada.beargamemovement;
 
-import com.sun.javafx.scene.traversal.Direction;
-
 import me.pabloestrada.bearwarplayer.Player;
 
 public class Region {
 
 	private Position topLeft;
 	private Position bottomRight;
+	
+	private RoomType roomType;
 
 	public Region(Position topLeft, Position bottomRight) {
 		this.topLeft = topLeft;
+		this.roomType = RoomType.LOBBY;
+		this.bottomRight = bottomRight;
+	}
+	
+	public Region(Position topLeft, Position bottomRight, RoomType type) {
+		this.topLeft = topLeft;
+		this.roomType = type;
 		this.bottomRight = bottomRight;
 	}
 
@@ -37,5 +44,9 @@ public class Region {
 	
 	public String toString() {
 		return "Spans from top left " + topLeft + " to bottomRight" + bottomRight;
+	}
+	
+	public RoomType getRoomType() {
+		return roomType;
 	}
 }
