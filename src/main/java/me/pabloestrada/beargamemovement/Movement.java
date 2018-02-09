@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import me.pabloestrada.Util.MenuLoader;
 import me.pabloestrada.bearwarplayer.Player;
 
 public class Movement {
@@ -11,11 +12,14 @@ public class Movement {
 	private Timer timer;
 	private MovementDirection playerDirection;
 	private Player player;
+	
 	private List<Region> blockedRegions;
+	private List<Region> regionsOfInterest;
 
-	public Movement(Player player, List<Region> blockedRegions) {
+	public Movement(Player player, List<Region> blockedRegions, List<Region> regionsOfInterest) {
 		this.blockedRegions = blockedRegions;
 		this.player = player;
+		this.regionsOfInterest = regionsOfInterest;
 		playerDirection = MovementDirection.NONE;
 		timer = new Timer();
 	}
@@ -35,7 +39,15 @@ public class Movement {
 			}
 		}, 0, 500);
 	}*/
-
+	
+	private RoomType getRegionOfInterest(MovementDirection direction) {
+		for (Region region : regionsOfInterest) {
+			if (region.isInRegion(player, direction))
+				return region.getRoomType();
+		}
+		return RoomType.LOBBY;
+	}
+	
 	private boolean canMove(MovementDirection direction) {
 		for (Region region : blockedRegions) {
 			if (region.isInRegion(player, direction))
@@ -43,8 +55,15 @@ public class Movement {
 		}
 		return true;
 	}
+	
+	private void loadNewRoom(RoomType type) {
+		new MenuLoader(type.getFXMLAddress()).load();
+	}
 
 	public void setPlayerDirection(MovementDirection direction) {
+		RoomType type = getRegionOfInterest(direction);
+		if(type != RoomType.LOBBY)
+			loadNewRoom(type);
 		if (!canMove(direction))
 			return;
 		updatePlayerDirection(direction);
