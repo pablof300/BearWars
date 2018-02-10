@@ -17,7 +17,7 @@ public class BearWarMain extends Application {
 	public void start(Stage stage) throws Exception {
 		mainStage = stage;
 		gameInfo = new GameInfo();
-		new MenuLoader("lobby").load();
+		new MenuLoader("loadingscreen").load();
 		mainStage.setResizable(false);
 		mainStage.show();
 		mainStage.setTitle("Bear War");

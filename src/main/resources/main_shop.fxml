@@ -90,5 +90,13 @@
             </HBox>
          </children>
       </VBox>
+      <Text fill="WHITE" onMouseClicked="#back" pickOnBounds="true" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="&lt;">
+         <font>
+            <Font size="46.0" />
+         </font>
+         <StackPane.margin>
+            <Insets right="410.0" top="-580.0" />
+         </StackPane.margin>
+      </Text>
    </children>
 </StackPane>

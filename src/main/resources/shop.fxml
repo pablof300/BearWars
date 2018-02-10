@@ -122,7 +122,7 @@
             <Insets top="622.0" />
          </StackPane.margin>
       </Text>
-      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="Head Armor" textAlignment="CENTER" wrappingWidth="600.0">
+      <Text fx:id="shopTitle" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="Head Armor" textAlignment="CENTER" wrappingWidth="600.0">
          <font>
             <Font size="26.0" />
          </font>
@@ -177,7 +177,7 @@
             <Insets top="20.0" />
          </StackPane.margin>
       </HBox>
-      <Text fill="WHITE" pickOnBounds="true" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="&lt;">
+      <Text fill="WHITE" onMouseClicked="#back" pickOnBounds="true" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="&lt;">
          <font>
             <Font size="46.0" />
          </font>

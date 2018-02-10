@@ -40,5 +40,10 @@ public class MainShop {
 		new MenuLoader("shop").load();
 	}
 	
+	@FXML
+	private void back() {
+		new MenuLoader("lobby").load();
+	}
+	
 	
 }
