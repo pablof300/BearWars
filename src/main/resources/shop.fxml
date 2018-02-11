@@ -13,9 +13,30 @@
             <Image url="@shop.png" />
          </image>
       </ImageView>
+      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="You have selected the Icy Horn" textAlignment="CENTER" wrappingWidth="600.0">
+         <StackPane.margin>
+            <Insets top="622.0" />
+         </StackPane.margin>
+      </Text>
+      <Text fx:id="shopTitle" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="Head Armor" textAlignment="CENTER" wrappingWidth="600.0">
+         <font>
+            <Font size="26.0" />
+         </font>
+         <StackPane.margin>
+            <Insets bottom="550.0" />
+         </StackPane.margin>
+      </Text>
+      <Text fill="WHITE" onMouseClicked="#back" pickOnBounds="true" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="&lt;">
+         <font>
+            <Font size="46.0" />
+         </font>
+         <StackPane.margin>
+            <Insets bottom="580.0" right="600.0" />
+         </StackPane.margin>
+      </Text>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
          <children>
-            <GridPane maxHeight="650.0" maxWidth="600.0" prefHeight="400.0" prefWidth="600.0">
+            <GridPane fx:id="gridPane" maxHeight="650.0" maxWidth="600.0" prefHeight="400.0" prefWidth="600.0">
               <columnConstraints>
                 <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -33,11 +54,6 @@
                   <Insets top="200.0" />
                </VBox.margin>
                <children>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="Horns" textAlignment="CENTER" wrappingWidth="130.0" />
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="Visor" textAlignment="CENTER" wrappingWidth="130.0" GridPane.columnIndex="1" />
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="Spikes" textAlignment="CENTER" wrappingWidth="130.0" GridPane.columnIndex="2" />
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="Helm" textAlignment="CENTER" wrappingWidth="130.0" GridPane.columnIndex="3" />
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="fifth category" textAlignment="CENTER" wrappingWidth="130.0" GridPane.columnIndex="4" />
                   <ImageView fitHeight="100.0" fitWidth="100.0" GridPane.rowIndex="1">
                      <image>
                         <Image url="@shop_item.png" />
@@ -117,72 +133,44 @@
             </GridPane>
          </children>
       </VBox>
-      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="You have selected the Icy Horn" textAlignment="CENTER" wrappingWidth="600.0">
-         <StackPane.margin>
-            <Insets top="622.0" />
-         </StackPane.margin>
-      </Text>
-      <Text fx:id="shopTitle" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="Head Armor" textAlignment="CENTER" wrappingWidth="600.0">
+      <Text fill="WHITE" onMouseClicked="#back" pickOnBounds="true" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="0" textAlignment="CENTER" wrappingWidth="100.0">
          <font>
-            <Font size="26.0" />
+            <Font size="25.0" />
          </font>
          <StackPane.margin>
-            <Insets bottom="550.0" />
+            <Insets right="213.0" top="-300.0" />
          </StackPane.margin>
       </Text>
-      <HBox maxWidth="500.0" prefHeight="100.0" prefWidth="400.0">
-         <children>
-            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="0" textAlignment="CENTER" wrappingWidth="110.0">
-               <font>
-                  <Font size="26.0" />
-               </font>
-               <HBox.margin>
-                  <Insets top="150.0" />
-               </HBox.margin>
-            </Text>
-            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="0" textAlignment="CENTER" wrappingWidth="110.0">
-               <font>
-                  <Font size="26.0" />
-               </font>
-               <HBox.margin>
-                  <Insets top="150.0" />
-               </HBox.margin>
-            </Text>
-            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="0" textAlignment="CENTER" wrappingWidth="110.0">
-               <font>
-                  <Font size="26.0" />
-               </font>
-               <HBox.margin>
-                  <Insets top="150.0" />
-               </HBox.margin>
-            </Text>
-            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="0" textAlignment="CENTER" wrappingWidth="110.0">
-               <font>
-                  <Font size="26.0" />
-               </font>
-               <HBox.margin>
-                  <Insets top="150.0" />
-               </HBox.margin>
-            </Text>
-            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="0" textAlignment="CENTER" wrappingWidth="110.0">
-               <font>
-                  <Font size="26.0" />
-               </font>
-               <HBox.margin>
-                  <Insets top="150.0" />
-               </HBox.margin>
-            </Text>
-         </children>
-         <StackPane.margin>
-            <Insets top="20.0" />
-         </StackPane.margin>
-      </HBox>
-      <Text fill="WHITE" onMouseClicked="#back" pickOnBounds="true" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="&lt;">
+      <Text fill="WHITE" onMouseClicked="#back" pickOnBounds="true" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="0" textAlignment="CENTER" wrappingWidth="100.0">
          <font>
-            <Font size="46.0" />
+            <Font size="25.0" />
          </font>
          <StackPane.margin>
-            <Insets bottom="580.0" right="600.0" />
+            <Insets top="-300.0" />
+         </StackPane.margin>
+      </Text>
+      <Text fill="WHITE" onMouseClicked="#back" pickOnBounds="true" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="0" textAlignment="CENTER" wrappingWidth="100.0">
+         <font>
+            <Font size="25.0" />
+         </font>
+         <StackPane.margin>
+            <Insets right="-210.0" top="-300.0" />
+         </StackPane.margin>
+      </Text>
+      <Text fill="WHITE" onMouseClicked="#back" pickOnBounds="true" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="0" textAlignment="CENTER" wrappingWidth="100.0">
+         <font>
+            <Font size="25.0" />
+         </font>
+         <StackPane.margin>
+            <Insets right="435.0" top="-300.0" />
+         </StackPane.margin>
+      </Text>
+      <Text fill="WHITE" onMouseClicked="#back" pickOnBounds="true" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="0" textAlignment="CENTER" wrappingWidth="100.0">
+         <font>
+            <Font size="25.0" />
+         </font>
+         <StackPane.margin>
+            <Insets right="-430.0" top="-300.0" />
          </StackPane.margin>
       </Text>
    </children>

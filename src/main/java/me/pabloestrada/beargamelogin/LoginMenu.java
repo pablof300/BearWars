@@ -13,6 +13,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import me.pabloestrada.Util.MenuLoader;
 import me.pabloestrada.beargamedatabase.DatabaseUtil;
+import me.pabloestrada.beargamemusic.Music;
+import me.pabloestrada.beargamemusic.MusicType;
 import me.pabloestrada.beargamestats.GameInfo;
 import me.pabloestrada.beargamestats.PlayerStats;
 import me.pabloestrada.bearwar.BearWarMain;
@@ -26,7 +28,7 @@ public class LoginMenu {
 	private TextField usernameField;
 	@FXML
 	private TextField passwordField;
-
+	
 	private void setLoadingStatus() {
 		status.setText("loading...");
 	}
@@ -69,6 +71,7 @@ public class LoginMenu {
 
 			public void run() {
 				GameInfo.setOnline(true);
+				LoginScreen.music.stop();
 				new MenuLoader("lobby").load();
 				
 			}});

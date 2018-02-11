@@ -82,6 +82,7 @@ public class RegisterMenu {
 
 			public void run() {
 				GameInfo.setOnline(true);
+				LoginScreen.music.stop();
 				new MenuLoader("lobby").load();
 
 			}
