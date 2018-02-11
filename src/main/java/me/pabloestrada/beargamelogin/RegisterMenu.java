@@ -61,13 +61,18 @@ public class RegisterMenu {
 				}
 				if (register) {
 					Map<String, Object> farms = new HashMap<String, Object>();
+					Map<String, Object>items = new HashMap<String, Object>();
+					Map<String, Object>equippedItems = new HashMap<String, Object>();
 					int[] ids = { 1, 2, 3, 4 };
 					for (int id : ids)
 						farms.put("farm_" + id, false);
 
+					items.put("Helmet Armor", "0");
+					equippedItems.put("Helmet Armor", "0");
+					
 					PlayerStats newPlayerStats = new PlayerStats(usernameField.getText(), passwordField.getText(), 1, 0,
 							LevelStats.ONE.getStrength(), LevelStats.ONE.getStealth(), LevelStats.ONE.getGatherer(),
-							LevelStats.ONE.getDefense(), farms);
+							LevelStats.ONE.getDefense(), farms, items, equippedItems);
 					database.child("users").child(newPlayerStats.getUsername()).setValue(newPlayerStats);
 					BearWarMain.getGameInfo().setPlayerStats(newPlayerStats);
 					loadLobby();

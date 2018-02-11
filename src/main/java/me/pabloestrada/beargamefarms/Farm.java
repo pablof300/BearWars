@@ -77,6 +77,10 @@ public class Farm {
 		if (!isLocked)
 			startFarming();
 	}
+	
+	public void stopFarming() {
+		timer.cancel();
+	}
 
 	public void startFarming() {
 		timer = new Timer();

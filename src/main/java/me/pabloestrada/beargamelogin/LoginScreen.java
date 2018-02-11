@@ -2,6 +2,7 @@ package me.pabloestrada.beargamelogin;
 
 import javafx.fxml.FXML;
 import javafx.scene.layout.StackPane;
+import javafx.scene.text.Font;
 import me.pabloestrada.Util.MenuLoader;
 import me.pabloestrada.beargamemusic.Music;
 import me.pabloestrada.beargamemusic.MusicType;
@@ -18,6 +19,7 @@ public class LoginScreen {
 
 	@FXML
 	private void initialize() {
+		Font.loadFont(getClass().getResourceAsStream("/LCD_Solid.ttf"), 44);
 		if (music == null) {
 			music = new Music(MusicType.LOGIN);
 			music.playAndRepeat();

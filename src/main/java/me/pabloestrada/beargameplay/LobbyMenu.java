@@ -20,6 +20,8 @@ import me.pabloestrada.beargamemovement.Movement;
 import me.pabloestrada.beargamemovement.Position;
 import me.pabloestrada.beargamemovement.Region;
 import me.pabloestrada.beargamemovement.RoomType;
+import me.pabloestrada.beargamemusic.Music;
+import me.pabloestrada.beargamemusic.MusicType;
 import me.pabloestrada.beargamestats.GameInfo;
 import me.pabloestrada.beargamestats.PlayerStats;
 import me.pabloestrada.bearwar.BearWarMain;
@@ -68,12 +70,18 @@ public class LobbyMenu {
 
 	private Player player;
 	private Movement movementEngine;
-	
+
 	private Timer updater;
+
+	public static Music music;
 
 	@FXML
 	private void initialize() {
 
+		if (music == null) {
+			music = new Music(MusicType.LOBBY);
+			music.playAndRepeat();
+		}
 		Font.loadFont(getClass().getResourceAsStream("/LCD_Solid.ttf"), 44);
 
 		player = new Player(playerNode,
@@ -89,13 +97,22 @@ public class LobbyMenu {
 		gathererNode.setText("" + BearWarMain.getGameInfo().getPlayerStats().getGatherer());
 		defenseNode.setText("" + BearWarMain.getGameInfo().getPlayerStats().getDefense());
 
-		if(GameInfo.isOnline()) {
-			updater = new Timer();startUpdating();}
-		
+		if (GameInfo.isOnline()) {
+			updater = new Timer();
+			startUpdating();
+		}
+
 		launchKeyListener();
 		loadFarms();
 	}
 
+	public void stopFarms() {
+		updater.cancel();
+		for(Farm farm:farms) {
+			farm.stopFarming();
+		}
+	}
+	
 	private void startUpdating() {
 		updater.scheduleAtFixedRate(new TimerTask() {
 
@@ -105,11 +122,13 @@ public class LobbyMenu {
 
 					public void run() {
 						DatabaseUtil.updateUserdata();
-						
-					}});
-				
-			}}, 20 * 1000, 20 * 1000);
-		
+
+					}
+				});
+
+			}
+		}, 20 * 1000, 20 * 1000);
+
 	}
 
 	@FXML

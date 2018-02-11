@@ -1,7 +1,7 @@
 package me.pabloestrada.beargamelevels;
 
 public enum LevelStats {
-	ONE(1,1,0,1),TWO(1,1,0,1),THREE(1,1,0,1),FOUR(1,1,0,1),FIVE(1,1,0,1),SIX(1,1,0,1),SEVEN(1,1,0,1),EIGHT(1,1,0,1),NINE(1,1,0,1),TEN(1,1,0,1); 
+	ONE(3,3,0,3),TWO(1,1,0,1),THREE(1,1,0,1),FOUR(1,1,0,1),FIVE(1,1,0,1),SIX(1,1,0,1),SEVEN(1,1,0,1),EIGHT(1,1,0,1),NINE(1,1,0,1),TEN(1,1,0,1); 
 	
 	private int strength;
 	private int stealth;

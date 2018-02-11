@@ -5,6 +5,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import me.pabloestrada.Util.MenuLoader;
+import me.pabloestrada.beargameplay.LobbyMenu;
 import me.pabloestrada.bearwarplayer.Player;
 
 public class Movement {
@@ -15,10 +16,12 @@ public class Movement {
 	
 	private List<Region> blockedRegions;
 	private List<Region> regionsOfInterest;
+	private LobbyMenu lobby;
 
-	public Movement(Player player, List<Region> blockedRegions, List<Region> regionsOfInterest) {
+	public Movement(Player player, List<Region> blockedRegions, List<Region> regionsOfInterest,LobbyMenu lobby) {
 		this.blockedRegions = blockedRegions;
 		this.player = player;
+		this.lobby = lobby;
 		this.regionsOfInterest = regionsOfInterest;
 		playerDirection = MovementDirection.NONE;
 		timer = new Timer();
@@ -57,6 +60,7 @@ public class Movement {
 	}
 	
 	private void loadNewRoom(RoomType type) {
+		lobby.stopFarms();
 		new MenuLoader(type.getFXMLAddress()).load();
 	}
 

@@ -18,14 +18,19 @@ public class PlayerStats {
 
 	private Map<String, Object> farms;
 	
+	private Map<String, Object> items;
+	
+	private Map<String, Object> equippedItems;
+	
 	public PlayerStats() {
 		// Default constructor
 	}
 
 	public PlayerStats(String username, String password, int level, double money, int strength, int stealth,
-			int gatherer, int defense, Map<String, Object> farms) {
+			int gatherer, int defense, Map<String, Object> farms, Map<String, Object> items, Map<String, Object> equippedItems) {
 		this.username = username;
 		this.password = password;
+		this.items = items;
 		this.level = level;
 		this.money = money;
 		this.strength = strength;
@@ -33,6 +38,24 @@ public class PlayerStats {
 		this.gatherer = gatherer;
 		this.defense = defense;
 		this.farms = farms;
+		this.equippedItems = equippedItems;
+	}
+
+	
+	public Map<String, Object> getEquippedItems() {
+		return equippedItems;
+	}
+
+	public void setEquippedItems(Map<String, Object> equippedItems) {
+		this.equippedItems = equippedItems;
+	}
+
+	public Map<String, Object> getItems() {
+		return items;
+	}
+
+	public void setItems(Map<String, Object> items) {
+		this.items = items;
 	}
 
 	public Map<String, Object> getFarms() {
@@ -109,6 +132,14 @@ public class PlayerStats {
 
 	public String toString() {
 		return "Player: " + username + " of password: " + password + " has money $" + money ;
+	}
+	
+	public void updateStats( int strength, int stealth,
+			int gatherer, int defense) {
+		this.strength += strength;
+		this.stealth += stealth;
+		this.gatherer += gatherer;
+		this.defense += defense;
 	}
 
 }
