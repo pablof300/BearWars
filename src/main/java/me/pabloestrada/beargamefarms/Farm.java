@@ -15,7 +15,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
+import me.pabloestrada.beargamedatabase.DatabaseUtil;
 import me.pabloestrada.beargamemovement.Position;
+import me.pabloestrada.bearwar.BearWarMain;
 import me.pabloestrada.bearwarplayer.Player;
 
 public class Farm {
@@ -43,6 +45,8 @@ public class Farm {
 	private int price;
 	private Position awardFishPosition;
 	private StackPane pane;
+	
+	private int id;
 
 	private Text status;
 
@@ -54,6 +58,7 @@ public class Farm {
 		this.pane = pane;
 		this.player = player;
 		this.status = status;
+		this.id = id;
 		automaticRate = 0;
 		price = 0;
 		awardFishPosition = positionMap.get(id);
@@ -66,6 +71,7 @@ public class Farm {
 		this.status = status;
 		this.automaticRate = automaticRate;
 		this.isLocked = true;
+		this.id = id;
 		price = pricesMap.get(id);
 		awardFishPosition = positionMap.get(id);
 		if (!isLocked)
@@ -98,15 +104,21 @@ public class Farm {
 	}
 
 	private void attemptUnlockFarm() {
-		if (player.getStats().getMoney() < price) {
-			status.setText("You need $" + (int)(price - player.getStats().getMoney()) + " to purchase this farm!");
+		if (BearWarMain.getGameInfo().getPlayerStats().getMoney() < price) {
+			status.setText("You need $" + (int)(price - BearWarMain.getGameInfo().getPlayerStats().getMoney()) + " to purchase this farm!");
 			return;
 		}
+		unlockFarm();
+		status.setText("You have purchased a farm for $" + price);
+		BearWarMain.getGameInfo().getPlayerStats().getFarms().put("farm_" + id, true);
+		BearWarMain.getGameInfo().getPlayerStats().setMoney(BearWarMain.getGameInfo().getPlayerStats().getMoney() - price);
+		DatabaseUtil.updateUserdata();
+		player.updateMoney();
+	}
+	
+	public void unlockFarm() {
 		isLocked = false;
 		startFarming();
-		status.setText("You have purchased a farm for $" + price);
-		player.getStats().setMoney(player.getStats().getMoney() - price);
-		player.updateMoney();
 	}
 
 	@SuppressWarnings("unchecked")

@@ -3,6 +3,7 @@ package me.pabloestrada.bearwar;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import me.pabloestrada.Util.MenuLoader;
+import me.pabloestrada.beargamedatabase.DatabaseUtil;
 import me.pabloestrada.beargamestats.GameInfo;
 
 public class BearWarMain extends Application {
@@ -11,10 +12,12 @@ public class BearWarMain extends Application {
 
 	public static void main(String[] args) {
 		launch(args);
+	
 	}
 
 	@Override
 	public void start(Stage stage) throws Exception {
+		DatabaseUtil.authenticateDatabase();
 		mainStage = stage;
 		gameInfo = new GameInfo();
 		new MenuLoader("loadingscreen").load();

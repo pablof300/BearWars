@@ -145,7 +145,7 @@
             <Insets right="180.0" top="-190.0" />
          </StackPane.margin>
       </ImageView>
-      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="Lvl 10" textAlignment="CENTER" wrappingWidth="75.21928405761719">
+      <Text fx:id="levelNode" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="Lvl 10" textAlignment="CENTER" wrappingWidth="75.21928405761719">
          <StackPane.margin>
             <Insets left="380.0" top="645.0" />
          </StackPane.margin>
@@ -161,7 +161,7 @@
             <Insets top="345.0" />
          </StackPane.margin>
       </Text>
-      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="Parzival" wrappingWidth="289.2192840576172">
+      <Text fx:id="usernameNode" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="Parzival" wrappingWidth="289.2192840576172">
          <font>
             <Font size="15.0" />
          </font>

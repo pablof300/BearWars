@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="272.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.pabloestrada.beargamelogin.LoginMenu">
+   <children>
+      <ImageView fitHeight="272.0" fitWidth="560.0" opacity="0.8">
+         <image>
+            <Image url="@loginbackground.gif" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" opacity="0.8" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="Bear Wars">
+         <font>
+            <Font size="42.0" />
+         </font>
+         <StackPane.margin>
+            <Insets top="-200.0" />
+         </StackPane.margin>
+      </Text>
+      <Text fx:id="status" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" textAlignment="CENTER" wrappingWidth="572.0">
+         <StackPane.margin>
+            <Insets top="250.0" />
+         </StackPane.margin>
+      </Text>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="Username" textAlignment="CENTER" wrappingWidth="100.0" />
+            <TextField fx:id="usernameField" alignment="CENTER" maxWidth="300.0" style="-fx-background-color: transparent; -fx-font-family: &quot;LCD Solid&quot;;" />
+            <ImageView fitHeight="3.0" fitWidth="300.0">
+               <image>
+                  <Image url="@divider.png" />
+               </image>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="Password" textAlignment="CENTER" wrappingWidth="100.0">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Text>
+            <TextField fx:id="passwordField" alignment="CENTER" maxWidth="300.0" style="-fx-background-color: transparent; -fx-font-family: &quot;LCD Solid&quot;;" />
+            <ImageView fitHeight="3.0" fitWidth="300.0">
+               <image>
+                  <Image url="@divider.png" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+      <Text fill="WHITE" onMouseClicked="#back" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="&lt;">
+         <font>
+            <Font size="40.0" />
+         </font>
+         <StackPane.margin>
+            <Insets right="510.0" top="-210.0" />
+         </StackPane.margin>
+      </Text>
+      <ImageView onMouseClicked="#login" pickOnBounds="true">
+         <image>
+            <Image url="@login_button.png" />
+         </image>
+         <StackPane.margin>
+            <Insets top="160.0" />
+         </StackPane.margin>
+      </ImageView>
+   </children>
+</StackPane>

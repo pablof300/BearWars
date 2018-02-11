@@ -9,6 +9,7 @@ import javafx.util.Duration;
 import me.pabloestrada.beargamemovement.MovementDirection;
 import me.pabloestrada.beargamemovement.Position;
 import me.pabloestrada.beargamestats.PlayerStats;
+import me.pabloestrada.bearwar.BearWarMain;
 
 public class Player {
 
@@ -27,13 +28,9 @@ public class Player {
 
 	private Text fishAmountNode;
 
-	private PlayerStats stats;
-
 	public Player(ImageView playerNode, Text... textNodes) {
 		movementTransition = null;
 		loadedTexture = SpriteTexture.REGULAR;
-		stats = new PlayerStats();
-		stats.setMoney(0);
 
 		this.playerNode = playerNode;
 		this.strengthNode = textNodes[0];
@@ -44,12 +41,12 @@ public class Player {
 	}
 
 	public void incrementFish() {
-		stats.setMoney(stats.getMoney() + 1);
+		BearWarMain.getGameInfo().getPlayerStats().setMoney(BearWarMain.getGameInfo().getPlayerStats().getMoney() + 1);
 		updateMoney();
 	}
 
 	public void updateMoney() {
-		fishAmountNode.setText("" + (int) stats.getMoney());
+		fishAmountNode.setText("" + (int) BearWarMain.getGameInfo().getPlayerStats().getMoney());
 	}
 
 	@SuppressWarnings("unchecked")
@@ -112,10 +109,6 @@ public class Player {
 
 	public boolean isMoving() {
 		return movementTransition != null;
-	}
-
-	public PlayerStats getStats() {
-		return stats;
 	}
 
 }
