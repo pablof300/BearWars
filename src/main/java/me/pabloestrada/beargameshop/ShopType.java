@@ -3,7 +3,7 @@ package me.pabloestrada.beargameshop;
 public enum ShopType {
 
 	HELMET_SHOP("Helmet Armor", new String[] {"Horns", "Visor", "Spikes", "Helm" , "Comb"}), CHESTPLATE_SHOP("Chestplate Armor", new String[] {"Brestplate", "Enchantment", "Gorget", "Placard", "Fauld"}), LEGS_SHOP("Legs Armor", new String[] {"Cuisse", "Tasset", "Greaves", "Leggings","Boots"}), ARMS_SHOP(
-			"Arms Armor", new String[] {"Couter", "Sword" ,"Gauntlet", "Shield","Glove"}), MISC_SHOP("Misc Items", new String[] {}), TEXTURES_SHOP("Textures", new String[] {});
+			"Arms Armor", new String[] {"Couter", "Sword" ,"Gauntlet", "Shield","Glove"});
 
 	private String shopTitle;
 	private String[] categories;

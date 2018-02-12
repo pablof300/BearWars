@@ -1,5 +1,6 @@
 package me.pabloestrada.beargamestats;
 
+import me.pabloestrada.beargamemusic.Music;
 import me.pabloestrada.beargameshop.ShopType;
 
 public class GameInfo {
@@ -8,7 +9,16 @@ public class GameInfo {
 	private static PlayerStats stats;
 	
 	private static boolean isOnline;
-
+	private static int trainingLevel;
+	
+	private static boolean isTraining;
+	
+	private static Music music;
+	
+	static {
+		music = new Music();
+	}
+	
 	public ShopType getCurrentShop() {
 		return currentShop;
 	}
@@ -21,6 +31,15 @@ public class GameInfo {
 		return stats;
 	}
 	
+	public static int getTrainingLevel() {
+		return trainingLevel;
+	}
+
+	public static void setTrainingLevel(int trainingLevel) {
+		GameInfo.trainingLevel = trainingLevel;
+	}
+
+	
 	public void setPlayerStats(PlayerStats playerStats) {
 		stats = playerStats;
 	}
@@ -32,5 +51,22 @@ public class GameInfo {
 	public static void setOnline(boolean isOnline) {
 		GameInfo.isOnline = isOnline;
 	}
+	
+	public static boolean isTraining() {
+		return isTraining;
+	}
+
+	public static Music getMusic() {
+		return music;
+	}
+
+	public static void setMusic(Music music) {
+		GameInfo.music = music;
+	}
+
+	public static void setTraining(boolean isTraining) {
+		GameInfo.isTraining = isTraining;
+	}
+
 	
 }

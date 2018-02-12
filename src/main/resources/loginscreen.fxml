@@ -8,7 +8,6 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
 <StackPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="272.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.pabloestrada.beargamelogin.LoginScreen">
    <children>
       <ImageView fitHeight="272.0" fitWidth="560.0" opacity="0.8">
@@ -34,11 +33,6 @@
             <ImageView fitHeight="60.0" fitWidth="105.0" onMouseClicked="#register" pickOnBounds="true">
                <image>
                   <Image url="@register_button.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="60.0" fitWidth="105.0" onMouseClicked="#singlePlayer" pickOnBounds="true">
-               <image>
-                  <Image url="@single_player.png" />
                </image>
             </ImageView>
          </children>

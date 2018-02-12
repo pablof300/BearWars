@@ -67,10 +67,10 @@ public class RegisterMenu {
 					for (int id : ids)
 						farms.put("farm_" + id, false);
 
-					items.put("Helmet Armor", "0");
-					equippedItems.put("Helmet Armor", "0");
+					items.put("Helmet Armor", "");
+					equippedItems.put("Helmet Armor", "");
 					
-					PlayerStats newPlayerStats = new PlayerStats(usernameField.getText(), passwordField.getText(), 1, 0,
+					PlayerStats newPlayerStats = new PlayerStats(usernameField.getText(), passwordField.getText(),0, 10, 1, 0,
 							LevelStats.ONE.getStrength(), LevelStats.ONE.getStealth(), LevelStats.ONE.getGatherer(),
 							LevelStats.ONE.getDefense(), farms, items, equippedItems);
 					database.child("users").child(newPlayerStats.getUsername()).setValue(newPlayerStats);

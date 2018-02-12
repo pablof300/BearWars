@@ -1,7 +1,7 @@
 package me.pabloestrada.beargamemovement;
 
 public enum RoomType {
-	MULTIPLAYER_ROOM("multiplayer_room"), TRAINING_ROOM("training_room"), SHOP_ROOM("main_shop"), LOBBY("lobby");
+	HEALING(""), TRAINING_ROOM("training_room"), SHOP_ROOM("main_shop"), LOBBY("lobby");
 	
 	private String FXMLAddress;
 	

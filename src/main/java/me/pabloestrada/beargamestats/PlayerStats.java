@@ -14,22 +14,29 @@ public class PlayerStats {
 	private int gatherer;
 	private int defense;
 
+	private double hp;
+
 	private int level;
 
 	private Map<String, Object> farms;
-	
+
 	private Map<String, Object> items;
-	
+
 	private Map<String, Object> equippedItems;
-	
+
+	private int exp;
+
 	public PlayerStats() {
 		// Default constructor
 	}
 
-	public PlayerStats(String username, String password, int level, double money, int strength, int stealth,
-			int gatherer, int defense, Map<String, Object> farms, Map<String, Object> items, Map<String, Object> equippedItems) {
+	public PlayerStats(String username, String password, int exp, double hp, int level, double money, int strength,
+			int stealth, int gatherer, int defense, Map<String, Object> farms, Map<String, Object> items,
+			Map<String, Object> equippedItems) {
 		this.username = username;
 		this.password = password;
+		this.exp = exp;
+		this.hp = hp;
 		this.items = items;
 		this.level = level;
 		this.money = money;
@@ -41,7 +48,22 @@ public class PlayerStats {
 		this.equippedItems = equippedItems;
 	}
 
-	
+	public int getExp() {
+		return exp;
+	}
+
+	public void setExp(int exp) {
+		this.exp = exp;
+	}
+
+	public double getHp() {
+		return hp;
+	}
+
+	public void setHp(double hp) {
+		this.hp = hp;
+	}
+
 	public Map<String, Object> getEquippedItems() {
 		return equippedItems;
 	}
@@ -131,11 +153,12 @@ public class PlayerStats {
 	}
 
 	public String toString() {
-		return "Player: " + username + " of password: " + password + " has money $" + money ;
+		return "Player: " + username + " of password: " + password + " has money $" + money + " a level of " + level
+				+ " a str of" + strength + " a stealth of " + stealth + " a gather of " + gatherer
+				+ " and a defense of " + defense + " hp: " + hp;
 	}
-	
-	public void updateStats( int strength, int stealth,
-			int gatherer, int defense) {
+
+	public void updateStats(int strength, int stealth, int gatherer, int defense) {
 		this.strength += strength;
 		this.stealth += stealth;
 		this.gatherer += gatherer;

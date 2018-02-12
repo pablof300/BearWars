@@ -11,9 +11,23 @@ public class Music {
 
 	private MusicType type;
 	private static MediaPlayer mediaPlayer;
-	
+
+	public Music() {
+
+	}
+
 	public Music(MusicType type) {
 		this.type = type;
+	}
+
+	public void setType(MusicType type) {
+		if (this.type == type)
+			return;
+		this.type = type;
+		if (mediaPlayer != null)
+			mediaPlayer.stop();
+		mediaPlayer = null;
+		playAndRepeat();
 	}
 
 	public void play() {
@@ -21,7 +35,7 @@ public class Music {
 		mediaPlayer = new MediaPlayer(sound);
 		mediaPlayer.play();
 	}
-	
+
 	public void playAndRepeat() {
 		play();
 		mediaPlayer.setOnEndOfMedia(new Runnable() {
@@ -32,9 +46,12 @@ public class Music {
 			}
 		});
 	}
-	
+
 	public void stop() {
+		System.out.println("STOP the damn music");
 		mediaPlayer.stop();
+		mediaPlayer.setOnEndOfMedia(null);
+		mediaPlayer = null;
 	}
 
 }

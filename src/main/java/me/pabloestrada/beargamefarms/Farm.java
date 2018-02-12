@@ -32,7 +32,7 @@ public class Farm {
 		// Convert to enum!
 		Position[] positions = { new Position(100, -290), new Position(190, 86), new Position(190, 270),
 				new Position(0, 270), new Position(0, 86) };
-		int[] prices = { 0, 1, 1, 1, 1 };
+		int[] prices = { 0, 100, 1000, 4000, 10000 };
 
 		for (int i = 0; i < positions.length; i++) {
 			positionMap.put(i, positions[i]);
@@ -45,7 +45,7 @@ public class Farm {
 	private int price;
 	private Position awardFishPosition;
 	private StackPane pane;
-	
+
 	private int id;
 
 	private Text status;
@@ -77,30 +77,30 @@ public class Farm {
 		if (!isLocked)
 			startFarming();
 	}
-	
+
 	public void stopFarming() {
-		timer.cancel();
+		if (timer != null)
+			timer.cancel();
 	}
 
 	public void startFarming() {
 		timer = new Timer();
-		
 
-			
-				timer.schedule(new TimerTask() {
-					
-					@Override
+		timer.schedule(new TimerTask() {
+
+			@Override
+			public void run() {
+				Platform.runLater(new Runnable() {
+
 					public void run() {
-						Platform.runLater(new Runnable() {
-
-							public void run() {
-								farmFish();
-								
-							}});
+						farmFish();
 
 					}
-				}, 0, automaticRate);	
-			
+				});
+
+			}
+		}, 0, automaticRate);
+
 	}
 
 	private Image getFishImage() {
@@ -109,17 +109,19 @@ public class Farm {
 
 	private void attemptUnlockFarm() {
 		if (BearWarMain.getGameInfo().getPlayerStats().getMoney() < price) {
-			status.setText("You need $" + (int)(price - BearWarMain.getGameInfo().getPlayerStats().getMoney()) + " to purchase this farm!");
+			status.setText("You need $" + (int) (price - BearWarMain.getGameInfo().getPlayerStats().getMoney())
+					+ " to purchase this farm!");
 			return;
 		}
 		unlockFarm();
 		status.setText("You have purchased a farm for $" + price);
 		BearWarMain.getGameInfo().getPlayerStats().getFarms().put("farm_" + id, true);
-		BearWarMain.getGameInfo().getPlayerStats().setMoney(BearWarMain.getGameInfo().getPlayerStats().getMoney() - price);
+		BearWarMain.getGameInfo().getPlayerStats()
+				.setMoney(BearWarMain.getGameInfo().getPlayerStats().getMoney() - price);
 		DatabaseUtil.updateUserdata();
 		player.updateMoney();
 	}
-	
+
 	public void unlockFarm() {
 		isLocked = false;
 		startFarming();
@@ -163,6 +165,3 @@ public class Farm {
 	}
 
 }
-
-
-

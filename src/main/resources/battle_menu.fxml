@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.pabloestrada.beargamebattle.Battle">
+   <children>
+      <ImageView fitHeight="650.0" fitWidth="660.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@attackmenu.png" />
+         </image>
+      </ImageView>
+      <HBox alignment="CENTER" maxHeight="30.0" maxWidth="100.0" prefHeight="173.0" prefWidth="100.0">
+         <children>
+            <Text fx:id="player_two_strength" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="0" textAlignment="CENTER" wrappingWidth="40.0">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Text>
+            <Text fx:id="player_two_stealth" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="0" textAlignment="CENTER" wrappingWidth="40.0">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Text>
+            <Text fx:id="player_two_gatherer" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="0" textAlignment="CENTER" wrappingWidth="40.0">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Text>
+            <Text fx:id="player_two_defense" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="0" textAlignment="CENTER" wrappingWidth="40.0">
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin>
+            </Text>
+         </children>
+         <StackPane.margin>
+            <Insets right="388.0" top="-410.0" />
+         </StackPane.margin>
+      </HBox>
+      <VBox maxHeight="50.0" maxWidth="284.0" prefHeight="200.0" prefWidth="284.0">
+         <children>
+            <Text fx:id="player_two_hp_text" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text=" HP: (10/10)" wrappingWidth="300.0" />
+            <ProgressBar fx:id="player_two_hp" prefHeight="22.0" prefWidth="284.0" progress="1.0" scaleShape="false" style="-fx-background-color: black; -fx-border-color: black; -fx-control-inner-background: black; -fx-text-box-border: black; -fx-accent: red;" />
+         </children>
+         <StackPane.margin>
+            <Insets right="240.0" top="-560.0" />
+         </StackPane.margin>
+      </VBox>
+      <VBox alignment="CENTER" maxHeight="200.0" maxWidth="200.0" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <ImageView fitHeight="200.0" fitWidth="200.0">
+               <image>
+                  <Image url="@bear_texture_0.gif" />
+               </image>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </ImageView>
+            <Text fx:id="player_two_username" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="Parzival (Lvl 1)" />
+         </children>
+         <StackPane.margin>
+            <Insets right="-370.0" top="-440.0" />
+         </StackPane.margin>
+      </VBox>
+      <HBox alignment="CENTER" maxHeight="30.0" maxWidth="100.0" prefHeight="173.0" prefWidth="100.0">
+         <children>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="0" textAlignment="CENTER" wrappingWidth="40.0">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Text>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="0" textAlignment="CENTER" wrappingWidth="40.0">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Text>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="0" textAlignment="CENTER" wrappingWidth="40.0">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Text>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="0" textAlignment="CENTER" wrappingWidth="40.0">
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin>
+            </Text>
+         </children>
+         <StackPane.margin>
+            <Insets right="-374.0" top="252.0" />
+         </StackPane.margin>
+      </HBox>
+      <VBox alignment="CENTER" maxHeight="200.0" maxWidth="200.0" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <ImageView fitHeight="200.0" fitWidth="200.0">
+               <image>
+                  <Image url="@bear_texture_0.gif" />
+               </image>
+            </ImageView>
+            <Text fx:id="player_one_username" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="Parzival (Lvl 1)" />
+         </children>
+         <StackPane.margin>
+            <Insets right="390.0" top="430.0" />
+         </StackPane.margin>
+      </VBox>
+      <VBox maxHeight="50.0" maxWidth="284.0" prefHeight="200.0" prefWidth="284.0">
+         <children>
+            <Text fx:id="player_one_hp_text" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text=" HP: (10/10)" wrappingWidth="300.0" />
+            <ProgressBar fx:id="player_one_hp" prefHeight="22.0" prefWidth="284.0" progress="1.0" scaleShape="false" style="-fx-background-color: black; -fx-border-color: black; -fx-control-inner-background: black; -fx-text-box-border: black; -fx-accent: red;" />
+         </children>
+         <StackPane.margin>
+            <Insets right="-270.0" top="264.0" />
+         </StackPane.margin>
+      </VBox>
+      <HBox alignment="CENTER" maxHeight="30.0" maxWidth="100.0" prefHeight="173.0" prefWidth="100.0">
+         <children>
+            <Text fx:id="player_one_strength" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="0" textAlignment="CENTER" wrappingWidth="40.0">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Text>
+            <Text fx:id="player_one_stealth" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="0" textAlignment="CENTER" wrappingWidth="40.0">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Text>
+            <Text fx:id="player_one_gatherer" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="0" textAlignment="CENTER" wrappingWidth="40.0">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Text>
+            <Text fx:id="player_one_defense" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="0" textAlignment="CENTER" wrappingWidth="40.0">
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin>
+            </Text>
+         </children>
+         <StackPane.margin>
+            <Insets right="-370.0" top="400.0" />
+         </StackPane.margin>
+      </HBox>
+      <VBox maxHeight="90.0" maxWidth="290.0" prefHeight="90.0" prefWidth="290.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Text fill="#494949" onMouseClicked="#attack" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="Attack" textAlignment="CENTER" wrappingWidth="100.0">
+                     <HBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#494949" onMouseClicked="#gather" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="Gather" textAlignment="CENTER" wrappingWidth="100.0">
+                     <HBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Text fill="#494949" onMouseClicked="#escape" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="Escape" textAlignment="CENTER" wrappingWidth="100.0">
+                     <HBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+         </children>
+         <StackPane.margin>
+            <Insets right="-230.0" top="530.0" />
+         </StackPane.margin>
+      </VBox>
+      <Text fx:id="status" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="It is your turn Parzival" textAlignment="CENTER" wrappingWidth="600.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+   </children>
+</StackPane>

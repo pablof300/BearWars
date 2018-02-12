@@ -6,15 +6,21 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import javafx.util.Duration;
 import me.pabloestrada.beargamedatabase.DatabaseUtil;
 import me.pabloestrada.beargamefarms.Farm;
+import me.pabloestrada.beargamelevels.LevelStats;
 import me.pabloestrada.beargamemovement.KeyListener;
 import me.pabloestrada.beargamemovement.Movement;
 import me.pabloestrada.beargamemovement.Position;
@@ -73,20 +79,68 @@ public class LobbyMenu {
 
 	private Timer updater;
 
-	public static Music music;
+	@FXML
+	private ProgressBar hp;
+	@FXML
+	private Text hp_text;
+
+	@FXML
+	private Text exp;
+
+	public void updateHp() {
+		double percentage = BearWarMain.getGameInfo().getPlayerStats().getHp()
+				/ (double) LevelStats.getLevelStats(BearWarMain.getGameInfo().getPlayerStats().getLevel()).getHp();
+		Timeline timeline = new Timeline();
+
+		KeyValue keyValue = new KeyValue(hp.progressProperty(), percentage);
+		KeyFrame keyFrame = new KeyFrame(new Duration(1000), keyValue);
+		timeline.getKeyFrames().add(keyFrame);
+
+		timeline.play();
+
+		hp_text.setText(" HP: (" + (int) BearWarMain.getGameInfo().getPlayerStats().getHp() + "/"
+				+ LevelStats.getLevelStats(BearWarMain.getGameInfo().getPlayerStats().getLevel()).getHp() + ")");
+	}
+
+	private void updateExp() {
+		if (BearWarMain.getGameInfo().getPlayerStats().getExp() >= LevelStats
+				.getLevelStats(BearWarMain.getGameInfo().getPlayerStats().getLevel()).getExp()) {
+			LevelStats prev = LevelStats.getLevelStats(BearWarMain.getGameInfo().getPlayerStats().getLevel());
+			LevelStats next = LevelStats.getLevelStats(BearWarMain.getGameInfo().getPlayerStats().getLevel() + 1);
+			BearWarMain.getGameInfo().getPlayerStats().setExp(0);
+			BearWarMain.getGameInfo().getPlayerStats()
+					.setLevel(BearWarMain.getGameInfo().getPlayerStats().getLevel() + 1);
+
+			BearWarMain.getGameInfo().getPlayerStats()
+					.setStrength(BearWarMain.getGameInfo().getPlayerStats().getStrength()
+							+ (next.getStrength() - prev.getStrength()));
+			
+			BearWarMain.getGameInfo().getPlayerStats()
+			.setStrength(BearWarMain.getGameInfo().getPlayerStats().getStealth()
+					+ (next.getStealth() - prev.getStealth()));
+			
+			BearWarMain.getGameInfo().getPlayerStats()
+			.setStrength(BearWarMain.getGameInfo().getPlayerStats().getDefense()
+					+ (next.getDefense() - prev.getDefense()));
+
+		}
+		exp.setText(BearWarMain.getGameInfo().getPlayerStats().getExp() + "/"
+				+ LevelStats.getLevelStats(BearWarMain.getGameInfo().getPlayerStats().getLevel()).getExp());
+		levelNode.setText("Lvl " + BearWarMain.getGameInfo().getPlayerStats().getLevel());
+		DatabaseUtil.updateUserdata();
+	}
 
 	@FXML
 	private void initialize() {
+		updateExp();
+		updateHp();
+		BearWarMain.getGameInfo().getMusic().setType(MusicType.LOBBY);
 
-		if (music == null) {
-			music = new Music(MusicType.LOBBY);
-			music.playAndRepeat();
-		}
 		Font.loadFont(getClass().getResourceAsStream("/LCD_Solid.ttf"), 44);
 
 		player = new Player(playerNode,
 				new Text[] { strengthNode, stealthNode, gathererNode, defenseNode, fishAmountNode });
-		movementEngine = new Movement(player, getRegions(), getRegionsOfInterest());
+		movementEngine = new Movement(player, getRegions(), getRegionsOfInterest(), this);
 		System.out.println(BearWarMain.getGameInfo().getPlayerStats());
 
 		fishAmountNode.setText("" + (int) BearWarMain.getGameInfo().getPlayerStats().getMoney());
@@ -108,11 +162,11 @@ public class LobbyMenu {
 
 	public void stopFarms() {
 		updater.cancel();
-		for(Farm farm:farms) {
+		for (Farm farm : farms) {
 			farm.stopFarming();
 		}
 	}
-	
+
 	private void startUpdating() {
 		updater.scheduleAtFixedRate(new TimerTask() {
 
@@ -168,9 +222,9 @@ public class LobbyMenu {
 
 	private List<Region> getRegionsOfInterest() {
 		ArrayList<Region> regions = new ArrayList<Region>();
-		double[][] topPosition = { { 100, 0 }, { 220, 0 }, { 325, 0 } };
-		double[][] bottomPosition = { { 145, 51 }, { 270, 51 }, { 375, 51 } };
-		RoomType[] regionTypes = { RoomType.MULTIPLAYER_ROOM, RoomType.TRAINING_ROOM, RoomType.SHOP_ROOM };
+		double[][] topPosition = { { 312, 158 }, { 220, 0 }, { 325, 0 } };
+		double[][] bottomPosition = { { 350, 200 }, { 270, 51 }, { 375, 51 } };
+		RoomType[] regionTypes = { RoomType.HEALING, RoomType.TRAINING_ROOM, RoomType.SHOP_ROOM };
 		for (int r = 0; r < topPosition.length; r++) {
 			regions.add(new Region(new Position(topPosition[r][0], topPosition[r][1]),
 					new Position(bottomPosition[r][0], bottomPosition[r][1]), regionTypes[r]));
@@ -187,5 +241,9 @@ public class LobbyMenu {
 					new Position(bottomPosition[r][0], bottomPosition[r][1])));
 		}
 		return regions;
+	}
+
+	public Text getStatus() {
+		return status;
 	}
 }

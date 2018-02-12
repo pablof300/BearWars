@@ -169,7 +169,7 @@
             <Insets left="-150.0" top="645.0" />
          </StackPane.margin>
       </Text>
-      <ProgressBar prefHeight="22.0" prefWidth="284.0" progress="1.0" scaleShape="false" style="-fx-background-color: black; -fx-border-color: black; -fx-control-inner-background: black; -fx-text-box-border: black; -fx-accent: red;">
+      <ProgressBar fx:id="hp" prefHeight="22.0" prefWidth="284.0" progress="1.0" scaleShape="false" style="-fx-background-color: black; -fx-border-color: black; -fx-control-inner-background: black; -fx-text-box-border: black; -fx-accent: red;">
          <StackPane.margin>
             <Insets right="55.0" top="400.0" />
          </StackPane.margin>
@@ -212,6 +212,19 @@
          </font>
          <StackPane.margin>
             <Insets right="-320.0" top="590.0" />
+         </StackPane.margin>
+      </Text>
+      <Text fx:id="hp_text" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="10/10" textAlignment="CENTER" wrappingWidth="68.0">
+         <StackPane.margin>
+            <Insets right="-310.0" top="401.0" />
+         </StackPane.margin>
+      </Text>
+      <Text fx:id="exp" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="10/100" wrappingWidth="100.0">
+         <font>
+            <Font size="12.0" />
+         </font>
+         <StackPane.margin>
+            <Insets right="240.0" top="446.0" />
          </StackPane.margin>
       </Text>
    </children>

@@ -18,17 +18,13 @@ public class MainShop {
 	private ImageView legsButton;
 	@FXML
 	private ImageView armsButton;
-	@FXML
-	private ImageView miscButton;
-	@FXML
-	private ImageView texturesButton;
 	
 	private HashMap<ImageView, ShopType> imageToShop;
 	
 	@FXML
 	private void initialize() {
 		imageToShop = new HashMap<ImageView, ShopType>();
-		ImageView[] nodes = {helmetButton, chestplateButton, legsButton, armsButton, miscButton, texturesButton};
+		ImageView[] nodes = {helmetButton, chestplateButton, legsButton, armsButton};
 		ShopType[] types = ShopType.values();
 		for(int i = 0; i < nodes.length; i ++) 
 			imageToShop.put(nodes[i], types[i]);

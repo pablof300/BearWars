@@ -37,9 +37,4 @@ public class LoginScreen {
 		new MenuLoader("registermenu").load();
 	}
 
-	@FXML
-	private void singlePlayer() {
-		GameInfo.setOnline(false);
-	}
-
 }

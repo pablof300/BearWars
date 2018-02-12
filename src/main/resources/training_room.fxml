@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.pabloestrada.beargametraining.TrainRoom">
+   <children>
+      <ImageView fitHeight="650.0" fitWidth="600.0">
+         <image>
+            <Image url="@train_menu.png" />
+         </image>
+      </ImageView>
+      <VBox maxHeight="90.0" maxWidth="290.0" prefHeight="290.0" prefWidth="90.0">
+         <children>
+            <HBox maxHeight="10.0" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Text fx:id="lvl_1" fill="#494949" onMouseClicked="#startTraining" pickOnBounds="true" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="Lvl 1" textAlignment="CENTER" wrappingWidth="55.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="2.0" right="2.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text fx:id="lvl_2" fill="#494949" onMouseClicked="#startTraining" pickOnBounds="true" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="Lvl 2" textAlignment="CENTER" wrappingWidth="55.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="2.0" right="2.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text fx:id="lvl_3" fill="#494949" onMouseClicked="#startTraining" pickOnBounds="true" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="Lvl 3" textAlignment="CENTER" wrappingWidth="55.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="2.0" right="2.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text fx:id="lvl_4" fill="#494949" onMouseClicked="#startTraining" pickOnBounds="true" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="Lvl 4" textAlignment="CENTER" wrappingWidth="55.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="2.0" right="2.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text fx:id="lvl_5" fill="#494949" onMouseClicked="#startTraining" pickOnBounds="true" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="Lvl 5" textAlignment="CENTER" wrappingWidth="55.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="2.0" right="2.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox maxHeight="10.0" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Text fx:id="lvl_6" fill="#494949" onMouseClicked="#startTraining" pickOnBounds="true" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="Lvl 6" textAlignment="CENTER" wrappingWidth="55.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="2.0" right="2.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text fx:id="lvl_7" fill="#494949" onMouseClicked="#startTraining" pickOnBounds="true" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="Lvl 7" textAlignment="CENTER" wrappingWidth="55.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="2.0" right="2.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text fx:id="lvl_8" fill="#494949" onMouseClicked="#startTraining" pickOnBounds="true" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="Lvl 8" textAlignment="CENTER" wrappingWidth="55.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="2.0" right="2.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text fx:id="lvl_9" fill="#494949" onMouseClicked="#startTraining" pickOnBounds="true" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="Lvl 9" textAlignment="CENTER" wrappingWidth="55.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="2.0" right="2.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text fx:id="lvl_10" fill="#494949" onMouseClicked="#startTraining" pickOnBounds="true" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="Lvl 10" textAlignment="CENTER" wrappingWidth="55.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="2.0" right="2.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+               <VBox.margin>
+                  <Insets top="6.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+         <StackPane.margin>
+            <Insets top="90.0" />
+         </StackPane.margin>
+      </VBox>
+   </children>
+</StackPane>

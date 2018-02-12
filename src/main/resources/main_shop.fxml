@@ -10,7 +10,7 @@
    <children>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@bear_texture_0.gif" />
                </image>
@@ -67,27 +67,11 @@
                      </HBox.margin>
                   </ImageView>
                </children>
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <ImageView fx:id="miscButton" fitHeight="96.0" fitWidth="190.0" onMouseClicked="#launchShop" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@shop_misc_button.png" />
-                     </image>
-                     <HBox.margin>
-                        <Insets right="2.0" />
-                     </HBox.margin>
-                  </ImageView>
-                  <ImageView fx:id="texturesButton" fitHeight="96.0" fitWidth="190.0" onMouseClicked="#launchShop" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@shop_textures_button.png" />
-                     </image>
-                     <HBox.margin>
-                        <Insets left="2.0" />
-                     </HBox.margin>
-                  </ImageView>
-               </children>
-            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" />
          </children>
       </VBox>
       <Text fill="WHITE" onMouseClicked="#back" pickOnBounds="true" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;LCD Solid&quot;;" text="&lt;">
