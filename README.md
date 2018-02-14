@@ -1,14 +1,14 @@
 # Bear Wars
 Small RPG where you train your bear and obtain fish to get items and battle other bears
 
-![bearwars](https://github.com/pablof300/Mancala/blob/master/src/main/resources/screenshot_1.png?raw=true)
+![bearwars](https://github.com/pablof300/BearWars/blob/master/screenshots/screenshot_0.png?raw=true)
 
 ## Configuration
 
 This project stores all user information into a [Firebase](https://firebase.google.com) database, so you set up a Firebase project and then change the firebase API key and firebase project address in the configuration file (config.properties). Firebase is free and very accessible, so it shouldn't be an issue.
 
 ## Downloads
-- builds [github](https://github.com/pablof300/Mancala/blob/master/Builds/Mancala%201.0.jar)
+- builds [github](https://github.com/pablof300/BearWars/tree/master/builds)
 
 ## Building from source
 Must have Java 8 JDK (JavaFX) and Maven
@@ -30,11 +30,13 @@ Make sure you configure the config.properties file if running the .jar file.
 
 ## Screenshots
 
-todo
+![bearwars](https://github.com/pablof300/BearWars/blob/master/screenshots/screenshot_1.png?raw=true)
+
+![bearwars](https://github.com/pablof300/BearWars/blob/master/screenshots/screenshot_2.png?raw=true)
 
 ## Contributions
 
-All of the contributions will be listed [here] (https://github.com/pablof300/BearWars/tree/master/contributions)
+All of the contributions will be listed [here](https://github.com/pablof300/BearWars/tree/master/contributions)
 
 ## TODO
 
