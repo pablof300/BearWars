@@ -15,6 +15,9 @@ public class GameInfo {
 	
 	private static Music music;
 	
+	private static String APIkey;
+	private static String firebaseAddress;
+
 	static {
 		music = new Music();
 	}
@@ -67,6 +70,20 @@ public class GameInfo {
 	public static void setTraining(boolean isTraining) {
 		GameInfo.isTraining = isTraining;
 	}
-
 	
+	public static String getAPIkey() {
+		return APIkey;
+	}
+
+	public static void setAPIkey(String aPIkey) {
+		APIkey = aPIkey;
+	}
+
+	public static String getFirebaseAddress() {
+		return firebaseAddress;
+	}
+
+	public static void setFirebaseAddress(String firebaseAddress) {
+		GameInfo.firebaseAddress = firebaseAddress;
+	}
 }

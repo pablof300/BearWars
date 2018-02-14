@@ -20,11 +20,11 @@ public class DatabaseUtil {
 	private static boolean valid;
 
 	public static void authenticateDatabase() {
-		database = new Firebase("https://bearwars-c519b.firebaseio.com/");
+		database = new Firebase(BearWarMain.getGameInfo().getFirebaseAddress());
 		Map<String, Object> authPayload = new HashMap<String, Object>();
 		authPayload.put("uid", "main_user");
 
-		TokenGenerator tokenGenerator = new TokenGenerator("lUS1nfvcs1R2OYXlOMAPUjK0PM3etW7Gp6HTsKL4");
+		TokenGenerator tokenGenerator = new TokenGenerator(BearWarMain.getGameInfo().getAPIkey());
 		String token = tokenGenerator.createToken(authPayload);
 		database.auth(token, new Firebase.AuthListener() {
 			public void onAuthError(FirebaseError arg0) {
